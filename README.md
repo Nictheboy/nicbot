@@ -1,0 +1,2 @@
+# Nicbot
+My personal assistant.

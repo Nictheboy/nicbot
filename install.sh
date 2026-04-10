@@ -1,5 +1,7 @@
 #/bin/bash
 
+# Please ensure libnuma1 is installed on your system.
+
 uv venv
 source .venv/bin/activate
 

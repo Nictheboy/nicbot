@@ -1,14 +1,12 @@
 #/bin/bash
 
 # Please ensure libnuma1 is installed on your system.
+set -e
 
-uv venv
+rm -rf .venv
+uv venv --python 3.12
 source .venv/bin/activate
 
-TORCH_VERSION=2.9.1
-SGLANG_VERSION=0.5.10
-SGLANG_KERNEL_VERSION=0.4.1
+VLLM_VERSION=0.30.0
 
-uv pip install --prerelease=allow torch==${TORCH_VERSION} torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
-uv pip install --prerelease=allow sglang==${SGLANG_VERSION}
-uv pip install --prerelease=allow "https://github.com/sgl-project/whl/releases/download/v${SGLANG_KERNEL_VERSION}/sglang_kernel-${SGLANG_KERNEL_VERSION}+cu130-cp310-abi3-manylinux2014_x86_64.whl"
+uv pip install --prerelease=allow vllm==${VLLM_VERSION}

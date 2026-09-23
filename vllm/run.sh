@@ -46,5 +46,6 @@ vllm serve ${MODEL_PATH} \
     --enable-auto-tool-choice \
     --tool-call-parser qwen3_coder \
     --reasoning-parser qwen3 \
+    --speculative-config '{"method": "mtp", "num_speculative_tokens": 2}' \
     --host 0.0.0.0 \
     --port 3000
